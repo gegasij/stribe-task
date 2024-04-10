@@ -1,0 +1,19 @@
+spring.application:
+  name: spribe-task
+
+openexchangerates:
+  endpoint: https://openexchangerates.org/api
+  apiKey: c9ef8109eaa7425580febe6f952643e7
+
+scheduling:
+  cronExpression: "0 0 * * * *"
+
+spring:
+  liquibase.change-log: classpath:/db/changelog/db.changelog-master.yaml
+  profiles:
+    active: default
+  datasource:
+    url: jdbc:postgresql://localhost:5432/openexchangerates
+    username: spribe
+    password: the_best
+    driver-class-name: org.postgresql.Driver
